@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react'
 
 function App() {
-  const[backendData, setBackendData] = useState([{}]);
+  // const[backendData, setBackendData] = useState([{}]);
   const[menuCollapse, setMenuCollapse] = useState(false);
   
-  useEffect(() => {
-    fetch("/count").then(
-      reponse => reponse.json()
-    ).then(
-      data => {
-        setBackendData(data)
-      }
-    )
-  },[])
+  // useEffect(() => {
+  //   fetch("/count").then(
+  //     reponse => reponse.json()
+  //   ).then(
+  //     data => {
+  //       setBackendData(data)
+  //     }
+  //   )
+  // },[])
 
   return (
     <div>
@@ -28,15 +28,19 @@ function App() {
           <li><p>02</p><a href="#">CREW</a></li>
           <li><p>03</p><a href="#">TECHNOLOGY</a></li>
         </ul>
-
       </nav>
-      <div className="texBox">
-        <h5 className='firstHeading'>SO, YOU WANT TO TRAVEL TO</h5>
-        <h1>SPACE</h1>
-        <p>Let’s face it; if you want to go to space, you might as well<br></br> genuinely go to outer space and not hover kind of on the <br></br>edge of it. Well sit back, and relax because we'll give you a <br></br>truly out of this world experience!</p>
-      </div>
+      <main className='hero'>
+        <div className="texBox">
+          <h5 className='firstHeading'>SO, YOU WANT TO TRAVEL TO</h5>
+          <h1 className='spaceHeading'>SPACE</h1>
+          <p>Let's face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we'll give you a truly out of this world experience!</p>
+        </div>
+        <div className="explore">
+          <p>EXPLORE</p>
+        </div>
+      </main>
     </div>
   )
 }
 
-export default App
+export default App;
