@@ -31,7 +31,7 @@ h5, .subheading2{
 }
 
 h1{
-    font-size: 15rem;
+    font-size: 8rem;
     color: #ffffff;
 }
 
@@ -197,6 +197,10 @@ li, a {
         background-image: url("./assets/home/background-home-desktop.jpg");
     }
 
+    h1{
+        font-size: 15rem;
+    }
+
     .navItems li a{
         font-size: 2rem;
     }
@@ -213,6 +217,7 @@ li, a {
     .navBar{
         margin-top: 4rem;
         height: 9.6rem;
+        position: relative;
     }
 
     .navBar .navItems{
@@ -232,5 +237,28 @@ li, a {
 
     .texBox{
         margin-left: 165px;
+    }
+
+    .navBar::after{
+        position: absolute;
+        content: "";
+        background-color: rgb(255, 255, 255, 0.3);
+        top: 42px;
+        right: 920px;
+        width: 500px;
+        height: 2px;
+    }
+    
+    .firstNumberNav{
+        padding-left: 100px;
+    }
+
+    .navBar .navItems li a{
+        margin-right: 40px;
+    }
+
+    .navBar .navItems .underline::after{
+        left: 100px;
+        width: 85px;
     }
 }

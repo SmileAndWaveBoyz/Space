@@ -23,7 +23,7 @@ function App() {
         </button>
 
         <ul className='navItems'>
-          <li className='underline'><p>00</p><a href="#">HOME</a></li>
+          <li className='underline firstNumberNav'><p>00</p><a href="#">HOME</a></li>
           <li><p>01</p><a href="#">DESTINATION</a></li>
           <li><p>02</p><a href="#">CREW</a></li>
           <li><p>03</p><a href="#">TECHNOLOGY</a></li>
@@ -32,7 +32,7 @@ function App() {
       </nav>
       <div className="texBox">
         <h5 className='firstHeading'>SO, YOU WANT TO TRAVEL TO</h5>
-        {/* <h1>SPACE</h1> */}
+        <h1>SPACE</h1>
         <p>Let’s face it; if you want to go to space, you might as well<br></br> genuinely go to outer space and not hover kind of on the <br></br>edge of it. Well sit back, and relax because we'll give you a <br></br>truly out of this world experience!</p>
       </div>
     </div>
