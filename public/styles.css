@@ -1,0 +1,236 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    /* outline: 1px solid white; */
+}
+
+:root{
+    --colour-dark: rgb(11, 13, 23);
+    --colour-primary: rgb(208, 214, 249);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.8rem;
+    background-image: url("./assets/home/background-home-mobile.jpg");
+    background-size: cover;
+    color: var(--colour-primary);
+}
+
+h1, h2, h3, h4, .subheading1{
+    font-family: 'Bellefair', serif;
+}
+
+h5, .subheading2{
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #d0d6f9;
+    text-align: center;
+}
+
+h1{
+    font-size: 15rem;
+    color: #ffffff;
+}
+
+h2{
+    font-size: 10rem;
+}
+
+h3{
+    font-size: 5.6rem;
+}
+
+h4{
+    font-size: 3.2rem;
+}
+
+h5{
+    font-size: 2.8rem;
+}
+
+/* Navigation bar */
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 2.4rem 2rem 2rem 2rem;
+    background-color: rgb(255, 255, 255, 0.0390);
+    transition: all 0.2s;
+}
+
+.navBar.expanded{
+    height: 22.5rem;
+}
+
+.logo{
+    height: 4rem;
+    width: 4rem;
+}
+
+.hamburgerButton{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255, 0);
+    border: 0;
+    outline: 0;
+    display: inline;
+}
+
+.hamburger{
+    height: 2.1rem;
+    width: 2.4rem;
+    filter: brightness(80%);
+    transition: all 0.2s;
+}
+
+.hamburger:hover{
+    filter: brightness(100%);
+}
+
+li, a {
+    text-decoration: none;
+    list-style-type: none;
+    color: var(--colour-primary);
+}
+
+.navItems{
+    position: absolute;
+    top: 5rem;
+    display: none;
+}
+
+.navItems li{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.navItems li a{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    transition: all 0.2s;
+}
+
+.navItems li a:hover{
+    color: #ffffff;
+}
+
+.expanded .navItems{
+    display: block;
+}
+
+.navBar .navItems .underline{
+    position: relative;
+}
+
+.navBar .navItems .underline::after{
+    position: absolute;
+    content: "";
+    background-color: #ffffff;
+    top: 27px;
+    left: 0px;
+    right: 0px;
+    width: 50px;
+    height: 3px;
+}
+
+.navBar .navItems li p{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    body{
+        background-image: url("./assets/home/background-home-tablet.jpg");
+        background-size: cover;
+    }
+
+    .hamburgerButton{
+        display: none;
+    }
+
+    .logo{
+        height: 4.8rem;
+        width: 4.8rem;
+        display: inline;
+        margin-left: 4rem;
+        margin-top: 2.4rem;
+    }
+
+    .navBar{
+        background-color: rgb(255, 255, 255, 0);
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navItems{
+        margin: 0;
+        position: static;
+        display: flex;
+        background-color: rgb(255, 255, 255, 0.05);
+        width: 50rem;
+        padding: 2rem 2rem;
+    }
+
+    .navItems li{
+        margin: 1rem 22px;
+    }
+
+    .firstHeading{
+        margin-top: 11rem;
+    }
+
+    .navBar .navItems .underline::after{
+        content: "";
+        background-color: #ffffff;
+        top: 52px;
+        left: 0px;
+        right: 0px;
+        width: 50px;
+        height: 3px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body{
+        background-image: url("./assets/home/background-home-desktop.jpg");
+    }
+
+    .navItems li a{
+        font-size: 2rem;
+    }
+
+    .navBar .navItems li p{
+        display: inline;
+        margin-right: 1.5rem;
+        color: white;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .navBar{
+        margin-top: 4rem;
+        height: 9.6rem;
+    }
+
+    .navBar .navItems{
+        width: 95rem;
+        margin-right: 0;
+    }
+
+    .navBar .navItems .underline::after{
+        width: 90px;
+        height: 3px;
+    }
+
+    .firstHeading{
+        margin-top: 25rem;
+        text-align: left;
+    }
+
+    .texBox{
+        margin-left: 165px;
+    }
+}
