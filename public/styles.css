@@ -121,11 +121,11 @@ li, a {
     display: block;
 }
 
-.navBar .navItems .underline{
+.navBar .navItems li{
     position: relative;
 }
 
-.navBar .navItems .underline::after{
+.navBar .navItems .active::after{
     position: absolute;
     content: "";
     background-color: #ffffff;
@@ -178,7 +178,7 @@ li, a {
         margin: 1rem 22px;
     }
 
-    .navBar .navItems .underline::after{
+    .navBar .navItems .active::after{
         content: "";
         background-color: #ffffff;
         top: 52px;
@@ -192,7 +192,7 @@ li, a {
 @media screen and (min-width: 1180px) {
     body{
         background-image: url("./assets/home/background-home-desktop.jpg");
-        background-size: 120%;
+        background-size: 132%;
     }
 }
 
@@ -230,7 +230,7 @@ li, a {
         margin-right: 0;
     }
 
-    .navBar .navItems .underline::after{
+    .navBar .navItems .active::after{
         width: 90px;
         height: 3px;
     }
@@ -258,7 +258,7 @@ li, a {
         margin-right: 40px;
     }
 
-    .navBar .navItems .underline::after{
+    .navBar .navItems .active::after{
         left: 100px;
         width: 85px;
     }

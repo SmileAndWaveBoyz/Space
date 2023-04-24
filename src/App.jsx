@@ -1,18 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
+import {NavLink, Link, Route, Routes} from 'react-router-dom';
+import Main from "./pages/Main";
+import Destinations from "./pages/Destinations";
 
 function App() {
-  // const[backendData, setBackendData] = useState([{}]);
   const[menuCollapse, setMenuCollapse] = useState(false);
-  
-  // useEffect(() => {
-  //   fetch("/count").then(
-  //     reponse => reponse.json()
-  //   ).then(
-  //     data => {
-  //       setBackendData(data)
-  //     }
-  //   )
-  // },[])
 
   return (
     <div>
@@ -23,22 +15,16 @@ function App() {
         </button>
 
         <ul className='navItems'>
-          <li className='underline firstNumberNav'><p>00</p><a href="#">HOME</a></li>
-          <li><p>01</p><a href="#">DESTINATION</a></li>
-          <li><p>02</p><a href="#">CREW</a></li>
-          <li><p>03</p><a href="#">TECHNOLOGY</a></li>
+          <li className='underline firstNumberNav'><p>00</p><NavLink to="/">HOME</NavLink></li>
+          <li><p>01</p><NavLink to="/Destinations">DESTINATION</NavLink></li>
+          <li><p>02</p><NavLink to="/Crew">CREW</NavLink></li>
+          <li><p>03</p><NavLink to="/Technology">TECHNOLOGY</NavLink></li>
         </ul>
       </nav>
-      <main className='hero'>
-        <div className="texBox">
-          <h5 className='firstHeading'>SO, YOU WANT TO TRAVEL TO</h5>
-          <h1 className='spaceHeading'>SPACE</h1>
-          <p>Let's face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we'll give you a truly out of this world experience!</p>
-        </div>
-        <div className="explore">
-          <p>EXPLORE</p>
-        </div>
-      </main>
+      <Routes>
+        <Route path='/' element={<Main/>} />
+        <Route path='/destinations' element={<Destinations/>} />
+      </Routes>
     </div>
   )
 }
