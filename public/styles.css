@@ -182,7 +182,6 @@ li, a {
         content: "";
         background-color: #ffffff;
         top: 52px;
-        left: 0px;
         right: 0px;
         width: 50px;
         height: 3px;
@@ -228,12 +227,9 @@ li, a {
     .navBar .navItems{
         width: 95rem;
         margin-right: 0;
+        padding-left: 100px;
     }
 
-    .navBar .navItems .active::after{
-        width: 90px;
-        height: 3px;
-    }
 
     .firstHeading{
         margin-top: 25rem;
@@ -250,16 +246,12 @@ li, a {
         height: 2px;
     }
     
-    .firstNumberNav{
-        padding-left: 100px;
-    }
-
     .navBar .navItems li a{
         margin-right: 40px;
     }
 
     .navBar .navItems .active::after{
-        left: 100px;
+        right: 0;
         width: 85px;
     }
 }

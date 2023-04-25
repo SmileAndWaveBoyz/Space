@@ -15,7 +15,7 @@ function App() {
         </button>
 
         <ul className='navItems'>
-          <li className='underline firstNumberNav'><p>00</p><NavLink to="/">HOME</NavLink></li>
+          <li className='firstNumberNav'><p>00</p><NavLink to="/">HOME</NavLink></li>
           <li><p>01</p><NavLink to="/Destinations">DESTINATION</NavLink></li>
           <li><p>02</p><NavLink to="/Crew">CREW</NavLink></li>
           <li><p>03</p><NavLink to="/Technology">TECHNOLOGY</NavLink></li>
