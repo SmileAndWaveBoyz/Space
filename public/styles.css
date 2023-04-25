@@ -12,6 +12,7 @@ html{
     font-size: 62.5%;
 }
 
+
 body{
     font-family: 'Barlow', sans-serif;
     font-size: 1.8rem;
@@ -188,18 +189,18 @@ li, a {
     }
 }
 
-@media screen and (min-width: 1180px) {
+/* @media screen and (min-width: 1180px) {
     body{
         background-image: url("./assets/home/background-home-desktop.jpg");
         background-size: 132%;
     }
-}
+} */
 
 @media screen and (min-width: 1440px) {
-    body{
+    /* body{
         background-image: url("./assets/home/background-home-desktop.jpg");
         background-size: 100%;
-    }
+    } */
 
     h1{
         font-size: 15rem;

@@ -1,6 +1,33 @@
 import React from "react";
 
 function Main() {
+
+  mediaQuerie();
+
+  window.addEventListener("resize", () => {
+    mediaQuerie();
+  });
+  
+  function mediaQuerie() {
+    let x = document.documentElement.clientWidth;
+    if (x < 768) {
+      document.body.style.backgroundImage = "url('./assets/home/background-home-mobile.jpg')";
+      document.body.style.backgroundSize = "108%";
+    } else if (x >= 768 && x < 1180) {
+      document.body.style.backgroundImage = "url('./assets/home/background-home-tablet.jpg')";
+      
+    } else if (x > 1180 && x < 1440) {
+      document.body.style.backgroundImage = "url('./assets/home/background-home-desktop.jpg')";
+      document.body.style.backgroundSize = "132%";
+    } else if (x >= 1440){
+      document.body.style.backgroundImage = "url('./assets/home/background-home-desktop.jpg')";
+      document.body.style.backgroundSize = "100%";
+    }
+  }
+
+  
+  
+
   return (
     <main className='hero'>
       <div className="texBox">

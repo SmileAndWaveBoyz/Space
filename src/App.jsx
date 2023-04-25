@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import {NavLink, Link, Route, Routes} from 'react-router-dom';
-import Main from "./pages/Main";
 import Destinations from "./pages/Destinations";
+import Main from "./pages/Main";
+
 
 function App() {
   const[menuCollapse, setMenuCollapse] = useState(false);
 
   return (
-    <div>
+    <div id='bodyDiv'>
       <nav className={menuCollapse ? "navBar expanded" : "navBar"}>
         <img className='logo' src="./assets/shared/logo.svg" alt="logo" />
         <button onClick={() => menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true)} 
