@@ -555,8 +555,101 @@ li, a {
 }
 
 @media screen and (min-width: 1440px) {
+    *{
+        /* outline: 1px solid white; */
+    }
+
+    .imageBox{
+        margin-left: 160px;
+        text-align: left;
+    }
+    .pickYourDestinationNumber{
+        font-size: 2.8rem;
+        letter-spacing: 4.725px;
+        margin-top: 7.6rem;
+    }
+    
     .pickYourDestination{
         font-size: 2.8rem;
-        letter-spacing: 4.72px;
+        letter-spacing: 4.725px;
+        margin-top: 7.6rem;
+    }
+    
+    .plannetImage{
+        margin-top: 70px;
+        margin-left: 80px;
+        width: 445px;
+        height: 445px;
+    }
+
+    .plannetBox{
+        height: 445px;
+        width: 472px;
+        margin-top: 190px;
+        transform: translate(100px);
+        /* outline: 1px solid white; */
+    }
+
+    .navPlannetItems{
+        display: inline;
+    }
+
+    .navPlannetItems li{
+        display: inline;
+    }
+    
+    .navPlannetItems li a{
+        font-size: 1.8rem;
+        margin-right: 0.8rem;
+        letter-spacing: 2.7px;
+        display: inline;
+    }
+    
+    .planetHeading{
+        font-size: 9rem;
+        margin-bottom: 0.8rem;
+        text-align: left;
+    }
+    
+    .infoText{
+        margin-left: 0;
+        font-size: 1.8rem;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .infoTextLine{
+        width: 100%;
+    }
+
+    .distanceTextBox h4{
+        text-align: left;
+    }
+
+    .estTravelTimeTextBox h4{
+        text-align: left;
+    }
+
+    .distanceTextBox p{
+        text-align: left;
+    }
+
+    .estTravelTimeTextBox p{
+        text-align: left;
+    }
+
+    .distanceTextBox{
+        width: 45%;
+    }
+
+    .estTravelTimeTextBox{
+        width: 45%;
+    }
+    
+    footer{
+        display: flex;
+        width: 573px;
+        margin: 0 auto;
+        padding-bottom: 1rem;
     }
 }
