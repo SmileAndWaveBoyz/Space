@@ -16,7 +16,8 @@ html{
 body{
     font-family: 'Barlow', sans-serif;
     font-size: 1.8rem;
-    background-image: url("./assets/home/background-home-mobile.jpg");
+    /* background-image: url("./assets/home/background-home-mobile.jpg"); */
+    background-color: rgb(5, 5, 32);
     background-size: 105%;
     color: var(--colour-primary);
 }
@@ -143,7 +144,7 @@ li, a {
 
 @media screen and (min-width: 768px) {
     body{
-        background-image: url("./assets/home/background-home-tablet.jpg");
+        /* background-image: url("./assets/home/background-home-tablet.jpg"); */
         background-size: 108%;
     }
 
@@ -351,11 +352,211 @@ li, a {
         line-height: 1.7;
     }
 
-    .spaceHeading{
-        /* margin-bottom: 7rem; */
-    }
-
     .explore{
         margin-top: 260px;
+    }
+}
+
+/* Destination page */
+
+.pickYourDestinationNumber{
+    font-size: 1.6rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    color: rgb(102, 99, 99);
+    letter-spacing: 2.72px;
+    opacity: 0.8;
+    display: inline;
+    margin-right: 1rem;
+}
+
+.pickYourDestination{
+    font-size: 1.6rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: normal;
+    color: white;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    display: inline;
+}
+
+.pickYourDestinationBox{
+    margin-top: 2.4rem;
+    margin-bottom: 3.2rem;
+}
+
+.plannetImage{
+    width: 170px;
+    height: 170px;    
+}
+
+.plannetSelectNav{
+    margin-bottom: 2.4rem;
+}
+
+.navPlannetItems{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.navPlannetItems li{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    position: relative;
+}
+
+.navPlannetItems li a{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    transition: all 0.2s;
+}
+
+.navPlannetItems li a:hover{
+    color: #ffffff;
+}
+
+/* .navPlannetItems .active::after{
+    position: absolute;
+    content: "";
+    background-color: #ffffff;
+    top: 27px;
+    left: 0px;
+    width: 40px;
+    height: 3px;
+} */
+
+.imageBox{
+    text-align: center;
+    margin: 0rem 3rem;
+    margin-bottom: 2.6rem;
+}
+
+.planetHeading{
+    margin: 0;
+    text-align: center;
+    font-size: 5.6rem;
+}
+
+.infoText{
+    font-size: 1.5rem;
+    line-height: 25px;
+    text-align: center;
+    margin: 1px 2.4rem;
+    margin-bottom: 3.2rem;
+}
+
+.infoTextLine{
+    width: 327px;
+    height: 1px;
+    background: #383B4B;
+    margin: 0 auto;
+    margin-bottom: 32px;
+}
+
+.estTravelTimeTextBox{
+    padding-bottom: 58px;
+}
+
+.distanceTextBox h4{
+    font-family: 'Barlow Condensed';
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 2.36px;
+    color: #D0D6F9;
+}
+
+.distanceTextBox p{
+    font-family: 'Bellefair';
+    font-size: 2.8rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.estTravelTimeTextBox h4{
+    font-family: 'Barlow Condensed';
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 2.36px;
+    color: #D0D6F9;
+}
+
+.estTravelTimeTextBox p{
+    font-family: 'Bellefair';
+    font-size: 2.8rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+    .pickYourDestinationNumber{
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 3.375px;
+    }
+    
+    .pickYourDestination{
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 3.375px;
+    }
+    
+    .pickYourDestinationBox{
+        text-align: left;
+        margin-left: 1.4rem;
+        margin-top: 4rem;
+        margin-bottom: 6rem;
+    }
+    
+    .plannetImage{
+        width: 300px;
+        height: 300px;
+        margin-bottom: 5.6rem;
+    }
+    
+    .plannetSelectNav{
+        margin-bottom: 3.2rem;
+    }
+    
+    .navPlannetItems li a{
+        font-size: 1.6rem;
+        letter-spacing: 2.7px;
+    }
+    
+    .planetHeading{
+        font-size: 8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .infoText{
+        font-size: 1.6rem;
+        line-height: 28px;
+        margin: 1px 9.8rem;
+        margin-bottom: 4.9rem;
+    }
+    
+    .infoTextLine{
+        width: 573px;
+    }
+    
+    .estTravelTimeTextBox{
+        padding-bottom: 0;
+    }
+    
+    footer{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 573px;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .pickYourDestination{
+        font-size: 2.8rem;
+        letter-spacing: 4.72px;
     }
 }

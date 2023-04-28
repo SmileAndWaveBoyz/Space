@@ -12,7 +12,7 @@ function Main() {
     let x = document.documentElement.clientWidth;
     if (x < 768) {
       document.body.style.backgroundImage = "url('./assets/home/background-home-mobile.jpg')";
-      document.body.style.backgroundSize = "108%";
+      document.body.style.backgroundSize = "118%";
     } else if (x >= 768 && x < 1180) {
       document.body.style.backgroundImage = "url('./assets/home/background-home-tablet.jpg')";
       

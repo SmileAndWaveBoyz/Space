@@ -14,7 +14,7 @@ function App() {
         <button onClick={() => menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true)} 
           className='hamburgerButton'><img className='hamburger' src="./assets/shared/icon-hamburger.svg" alt="menu button" />
         </button>
-
+        
         <ul className='navItems'>
           <li className='firstNumberNav'><p>00</p><NavLink to="/">HOME</NavLink></li>
           <li><p>01</p><NavLink to="/Destinations">DESTINATION</NavLink></li>
