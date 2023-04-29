@@ -203,6 +203,11 @@ li, a {
         background-size: 100%;
     } */
 
+    .logo{
+        margin-left: 4rem;
+        margin-top: 2rem;
+    }
+
     h1{
         font-size: 15rem;
     }
@@ -416,7 +421,7 @@ li, a {
     color: #ffffff;
 }
 
-/* .navPlannetItems .active::after{
+.navPlannetItems .active::after{
     position: absolute;
     content: "";
     background-color: #ffffff;
@@ -424,7 +429,7 @@ li, a {
     left: 0px;
     width: 40px;
     height: 3px;
-} */
+}
 
 .imageBox{
     text-align: center;
