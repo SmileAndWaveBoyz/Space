@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {NavLink, Link, Route, Routes} from 'react-router-dom';
 import Destinations from "./pages/Destinations";
 import Main from "./pages/Main";
+import Crew from './pages/Crew';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main/>} />
         <Route path='/destinations' element={<Destinations/>} />
+        <Route path='/crew' element={<Crew/>} />
       </Routes>
     </div>
   )

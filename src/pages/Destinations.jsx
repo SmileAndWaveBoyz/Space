@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Route, Routes} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Destinations() {
 
@@ -31,7 +31,7 @@ function Destinations() {
       <div className="imageBox">
         <div className="pickYourDestinationBox">
           <h2 className="pickYourDestinationNumber">01</h2>
-          <h2 className="pickYourDestination">PICK YOUR DESTINATION</h2>
+          <h2 className="pickYourDestination animate__animated animate__backInDown">PICK YOUR DESTINATION</h2>
         </div>
           <img className="plannetImage" src="./assets/destination/image-moon.webp" alt="" />
       </div>
