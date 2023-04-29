@@ -74,7 +74,7 @@ function Destinations() {
             <li><Link className="titanLink" onClick={() => {
                 document.querySelector(".titanLink").classList.add("active");
                 document.querySelector(".moonLink").classList.remove("active");
-                document.querySelector(".europaLink").classList.remove("active");
+                document.querySelector(".marsLink").classList.remove("active");
                 document.querySelector(".europaLink").classList.remove("active");
                 document.querySelector(".plannetImage").src="./assets/destination/image-titan.webp";
                 document.querySelector(".planetHeading").innerHTML="TITAN";
