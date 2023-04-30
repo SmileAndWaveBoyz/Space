@@ -667,6 +667,9 @@ li, a {
 /* Crew */
 .crewImage{
     height: 223px;
+    position: absolute;
+    transform: translate(-50%);
+    left: 50%
 }
 
 .titleHeading{
@@ -720,18 +723,9 @@ li, a {
 
     .crewImage{
         height: 572px;
-        position: absolute;
-        bottom: -50px;
-        left: 57%;
-        transform: translate(-50%);
     }
 }
 
-@media screen and (min-width: 820px) {
-    .crewImage{
-        bottom: 0px;
-    }
-}
 
 @media screen and (min-width: 1024px) {
     *{
@@ -766,8 +760,7 @@ li, a {
     }
 
     .crewImage{
-        left: 1300px;
-        height: 568px;
+        height: 712px;
     }
 
 }

@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import Example from "./Example";
+
 
 function Crew() {
 
@@ -43,7 +45,8 @@ function Crew() {
           <h2 className="pickYourDestinationNumber">02</h2>
           <h2 className="pickYourDestination animate__animated animate__backInDown">MEET YOUR CREW</h2>
         </div>
-          <img className="crewImage" src="./assets/crew/image-douglas-hurley.webp" alt="" />
+          {/* <img className="crewImage" src="./assets/crew/image-douglas-hurley.webp" alt="" /> */}
+          <Example/>
           <div className="infoTextLine"></div>
       </div>
       <div className="crewBox">
