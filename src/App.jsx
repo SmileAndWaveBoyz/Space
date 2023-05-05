@@ -7,6 +7,7 @@ import Crew from './pages/Crew';
 
 function App() {
   const[menuCollapse, setMenuCollapse] = useState(false);
+  
 
   return (
     <div id='bodyDiv'>
@@ -29,6 +30,8 @@ function App() {
         <Route path='/crew' element={<Crew/>} />
       </Routes>
     </div>
+
+    
   )
 }
 
