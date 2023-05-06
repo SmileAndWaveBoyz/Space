@@ -892,6 +892,11 @@ li, a {
     color: rgb(255, 255, 255, 0.5);
 }
 
+.activeDot{
+    transition: all 0.5s;
+    color: rgb(255, 255, 255, 1);
+}
+
 .dotsContainerStyles{
     display: flex;
     align-items: center;
