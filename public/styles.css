@@ -676,10 +676,6 @@ li, a {
     margin-top: 270px;
 }
 
-/* .css-1f8sh1y{
-    height: 223px;
-} */
-
 .titleHeading{
     font-weight: 400;
     font-size: 1.6rem;
@@ -873,20 +869,6 @@ li, a {
     height: 100%;
 }
 
-.tabletCarousel{
-    display: none;
-}
-.desktopCarousel{
-    display: none;
-}
-
-.desktopCarousel1x{
-    display: none;
-}
-.desktopCarousel2x{
-    display: none;
-}
-
 .containerStyles{
     width: 100%;
     height: 223px;
@@ -916,39 +898,6 @@ li, a {
 }
 
 @media screen and (min-width: 768px) {
-    .mobileCarousel{
-        display: none;
-    }
-
-    .tabletCarousel{
-        display: block;
-    }
-    .desktopCarousel{
-        display: none;
-    }
-
-    .containerStyles{
-        height: 562px;
-        position: relative;
-        /* margin-top: auto; */
-        bottom: -30px;
-    }
-
-    .dot{
-        font-size: 3rem;
-    }
-
-    .dotsContainerStyles{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        top: -650px;
-        margin-top: 25px;
-    }
-}
-
-@media screen and (min-width: 768px) {
     .containerStyles{
         height: 572px;
         bottom: -110px;
@@ -968,15 +917,6 @@ li, a {
 }
 
 @media screen and (min-width: 1024px) {
-    .mobileCarousel{
-        display: none;
-    }
-    .tabletCarousel{
-        display: none;
-    }
-    .desktopCarousel{
-        display: block;
-    }
     .dotsContainerStyles{
         justify-content: start;
         position: absolute;
@@ -995,20 +935,5 @@ li, a {
     }
 }
 
-@media screen and (min-width: 1440px) {
-    .desktopCarousel{
-        display: none;
-    }
-    .desktopCarousel1x{
-        display: block;
-    }
-}
 
-@media screen and (min-width: 1800px) {
-    .desktopCarousel1x{
-        display: none;
-    }
-    .desktopCarousel2x{
-        display: block;
-    }
-}
+

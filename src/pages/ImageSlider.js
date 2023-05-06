@@ -20,9 +20,46 @@ const slidesContainerOverflowStyles = {
   height: "100%",
 };
 
-const ImageSlider = ({ slides, parentWidth }) => {
-  const timerRef = useRef(null);
+const ImageSlider = ({ slides, parentWidth ,changeText}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [touchStartX, setTouchStartX] = useState(null)
+  const [touchStartY, setTouchStartY] = useState(null)
+  const [touchEndX, setTouchEndX] = useState(null)
+  const [touchEndY, setTouchEndY] = useState(null)
+
+  // the required distance between touchStart and touchEnd to be detected as a swipe
+  const minSwipeDistance = 10; 
+
+  const onTouchStart = (e) => {
+    setTouchEndX(null) // otherwise the swipe is fired even with usual touch events
+    setTouchEndY(null) // otherwise the swipe is fired even with usual touch events
+    setTouchStartX(e.targetTouches[0].clientX)
+    setTouchStartY(e.targetTouches[0].clientY)
+  }
+
+  const onTouchMove = (e) => {
+    setTouchEndX(e.targetTouches[0].clientX)
+    setTouchEndY(e.targetTouches[0].clientY)
+  }
+
+  const onTouchEnd = () => {
+    // if (!touchStart || !touchEnd) return
+    const distanceX = touchStartX - touchEndX
+    const distanceY = touchStartY - touchEndY
+    const isLeftSwipe = distanceX > minSwipeDistance
+    const isRightSwipe = distanceX < -minSwipeDistance
+    
+    if (isRightSwipe && Math.abs(distanceX) > distanceY) {
+      // add your conditional logic here
+      goToPrevious();
+    } 
+    if (isLeftSwipe && distanceX > distanceY) {
+      // add your conditional logic here
+      goToNext();
+    }
+
+  }
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -52,16 +89,14 @@ const ImageSlider = ({ slides, parentWidth }) => {
     transform: `translateX(${-(currentIndex * parentWidth)}px)`,
   });
 
-  useEffect(() => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-    timerRef.current = setTimeout(() => {
-      // goToNext(); // Autoplay
-    }, 2000);
 
-    return () => clearTimeout(timerRef.current);
-  }, [goToNext]);
+  useEffect(() => {   //This will update the text in the body of the page 
+    changeTextComponent(currentIndex);
+  },[currentIndex])
+
+  function changeTextComponent(i) {   //This will update the text in the body of the page 
+    changeText(i);
+  }
 
   return (
 
@@ -69,7 +104,7 @@ const ImageSlider = ({ slides, parentWidth }) => {
       <div style={slidesContainerOverflowStyles}>
         <div className="sliderContainer" style={getSlidesContainerStylesWithWidth()}>
           {slides.map((_, slideIndex) => (
-            <div className="imageDiv" key={slideIndex} style={getSlideStylesWithBackground(slideIndex)}></div>
+            <div className="imageDiv" key={slideIndex} style={getSlideStylesWithBackground(slideIndex)} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}></div>
           ))}
         </div>
       </div>
