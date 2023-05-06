@@ -11,38 +11,6 @@ function Crew() {
     { url: "./assets/crew/image-victor-glover.webp"},
     { url: "./assets/crew/image-anousheh-ansari.webp"}
   ];
-  
-  mediaQuerie();
-  window.addEventListener("resize", () => {
-    mediaQuerie();
-  });
-
-  function mediaQuerie() {
-    let x = document.documentElement.clientWidth;
-    if (x < 768) {
-      document.body.style.backgroundImage = "url('./assets/crew/background-crew-mobile.jpg')";
-      document.body.style.backgroundSize = "100%";
-    } 
-    
-    else if (x >= 768 && x < 820) {
-      document.body.style.backgroundImage = "url('./assets/crew/background-crew-tablet.jpg')";
-    } 
-
-    else if (x >= 820 && x < 1180) {
-      document.body.style.backgroundImage = "url('./assets/crew/background-crew-tablet.jpg')";
-      document.body.style.backgroundSize = "108%";
-    } 
-    
-    else if (x > 1180 && x < 1440) {
-      document.body.style.backgroundImage = "url('./assets/crew/background-crew-desktop.jpg')";
-      document.body.style.backgroundSize = "132%";
-    } 
-    
-    else if (x >= 1440){
-      document.body.style.backgroundImage = "url('./assets/crew/background-crew-desktop.jpg')";
-      document.body.style.backgroundSize = "100%";
-    }
-  }
 
   const[titleHeading, setTitleHeading] = useState("COMMANDER");
   const[crewHeading, setCrewHeading] = useState("Douglas Hurley");
