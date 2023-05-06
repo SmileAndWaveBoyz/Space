@@ -723,10 +723,12 @@ li, a {
         line-height: 28px;
         margin-left: 155px;
         margin-right: 155px;
+        padding-bottom: 2rem;
     }
 
     .infoTextLine{
         display: none;
+
     }
 
     .crewImage{
@@ -736,7 +738,7 @@ li, a {
 }
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
     *{
         /* outline: 1px solid white; */
     }
@@ -916,7 +918,7 @@ li, a {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1181px) {
     .dotsContainerStyles{
         justify-content: start;
         position: absolute;

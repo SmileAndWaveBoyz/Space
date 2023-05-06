@@ -44,21 +44,18 @@ const ImageSlider = ({ slides, parentWidth ,changeText}) => {
   }
 
   const onTouchEnd = () => {
-    // if (!touchStart || !touchEnd) return
+    if (!touchStartX || !touchEndX) return
     const distanceX = touchStartX - touchEndX
     const distanceY = touchStartY - touchEndY
     const isLeftSwipe = distanceX > minSwipeDistance
     const isRightSwipe = distanceX < -minSwipeDistance
     
     if (isRightSwipe && Math.abs(distanceX) > distanceY) {
-      // add your conditional logic here
       goToPrevious();
     } 
     if (isLeftSwipe && distanceX > distanceY) {
-      // add your conditional logic here
       goToNext();
     }
-
   }
 
   const goToPrevious = () => {

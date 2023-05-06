@@ -65,7 +65,7 @@ function Crew() {
     
       case 2:
         setTitleHeading("PILOT");
-        setCrewHeading("VICTOR GLOVER");
+        setCrewHeading("VICTOR");
         setInfoTextCrew("Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.");
         break;
     
@@ -89,22 +89,57 @@ function Crew() {
         </div>
           {/* <img className="crewImage" src="./assets/crew/image-douglas-hurley.webp" alt="" /> */}
         
-          <Media query="(max-width: 767px)">
+
+          <Media query="(max-width: 665px)">
             {(matches) => {
-              return matches 
-              ? 
+              return matches ? 
               <div className='containerStyles'>
                 <ImageSlider slides={slides} parentWidth={310} changeText={changeText}/>
               </div>
               : null;
             }}
           </Media>
-          <Media query="(min-width: 768px) and (max-width: 1024px)">
+
+          
+          <Media query="(min-width: 666px) and (max-width: 767px)">
             {(matches) => {
               return matches 
               ? 
               <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={850} changeText={changeText}/>
+                <ImageSlider slides={slides} parentWidth={580} changeText={changeText}/>
+              </div>
+              : null;
+            }}
+          </Media>
+
+          <Media query="(min-width: 768px) and (max-width: 1023px)">
+            {(matches) => {
+              return matches 
+              ? 
+              <div className='containerStyles'>
+                <ImageSlider slides={slides} parentWidth={800} changeText={changeText}/>
+              </div>
+              : null;
+            }}
+          </Media>
+
+          <Media query="(min-width: 1024px) and (max-width: 1179px)">
+            {(matches) => {
+              return matches 
+              ? 
+              <div className='containerStyles'>
+                <ImageSlider slides={slides} parentWidth={960} changeText={changeText}/>
+              </div>
+              : null;
+            }}
+          </Media>
+
+          <Media query="(min-width: 1179px) and (max-width: 1200px)">
+            {(matches) => {
+              return matches 
+              ? 
+              <div className='containerStyles'>
+                <ImageSlider slides={slides} parentWidth={1150} changeText={changeText}/>
               </div>
               : null;
             }}
@@ -123,12 +158,12 @@ function Crew() {
           <h2 className="crewHeading">{crewHeading}</h2>
             <p className="infoTextCrew">{infoTextCrew}</p>
         </div>
-          <Media query="(min-width: 1024px) and (max-width: 1400px)">
+          <Media query="(min-width: 1200px) and (max-width: 1400px)">
             {(matches) => {
               return matches 
               ? 
               <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={1000} changeText={changeText}/>
+                <ImageSlider slides={slides} parentWidth={600} changeText={changeText}/>
               </div>
               : null;
             }}
@@ -143,12 +178,22 @@ function Crew() {
               : null;
             }}
           </Media>
-          <Media query="(min-width: 1800px)">
+          <Media query="(min-width: 1800px) and (max-width: 2500px)">
             {(matches) => {
               return matches 
               ? 
               <div className='containerStyles'>
                 <ImageSlider slides={slides} parentWidth={1600} changeText={changeText}/>
+              </div>
+              : null;
+            }}
+          </Media>
+          <Media query="(min-width: 2500px)">
+            {(matches) => {
+              return matches 
+              ? 
+              <div className='containerStyles'>
+                <ImageSlider slides={slides} parentWidth={2400} changeText={changeText}/>
               </div>
               : null;
             }}
