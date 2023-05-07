@@ -17,13 +17,17 @@ function Technology() {
   const[infoTextCrew, setInfoTextCrew] = useState("Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.");
   const[windowWidth, setWindowWidth] = useState(window.innerWidth);
   const[carouselHeight, setCarouselHeight] = useState(window.innerWidth / 2.47741935484);
+  const[currentSlide, setCurrentSlide] = useState(0);
   window.addEventListener('resize', (event) => {
     setWindowWidth(event.target.innerWidth);
     setCarouselHeight((window.innerWidth / 2.47741935484) + "px");
   });
 
-  function changeText(index) {
+  function setSlide(i) {
+    setCurrentSlide(i);
+  }
 
+  function changeText(index) {
     switch (index) {
       case 0:
         setCrewHeading("LAUNCH VEHICLE");
@@ -55,15 +59,29 @@ function Technology() {
         </div>
         <div className='containerStylesMobile techPage' style= {{height: carouselHeight}}>
           <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeText={changeText}/>
+
         </div>
         <div className="techGrid">
           <div className="techTextGrid">
-            <h3 className="titleHeading techPage">THE TERMINOLOGY...</h3>
-            <h2 className="crewHeading">{crewHeading}</h2>
-            <p className="infoTextCrew">{infoTextCrew}</p>
+            <div className="buttonsAndText">
+                <div className="dotsContainerStylesNumber desktop">
+                  {slides.map((slide, slideIndex) => (
+                    slideIndex == currentSlide 
+                    ?
+                    <div className="dotNumber activeDotNumber" key={slideIndex} onClick={() => setSlide(slideIndex)}>{slideIndex + 1}</div>
+                    :
+                    <div className="dotNumber" key={slideIndex} onClick={() => setSlide(slideIndex)}>{slideIndex + 1}</div>
+                  ))}
+                </div> 
+              <div className="textGridTech">
+                <h3 className="titleHeading techPage">THE TERMINOLOGY...</h3>
+                <h2 className="crewHeading">{crewHeading}</h2>
+                <p className="infoTextCrew">{infoTextCrew}</p>
+              </div>
+            </div>
           </div>
             <div className='containerStylesDesktop techPage' style= {{height: "527px", width:"515px"}}>
-              <ImageSliderTechnology slides={slidesPortrait} parentWidth={515} changeText={changeText}/>
+              <ImageSliderTechnology slides={slidesPortrait} parentWidth={515} changeText={changeText} setSlide={currentSlide}/>
             </div>
         </div>
     </main>

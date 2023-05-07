@@ -20,13 +20,18 @@ const slidesContainerOverflowStyles = {
   height: "100%",
 };
 
-const ImageSliderTechnology = ({ slides, parentWidth ,changeText}) => {
+const ImageSliderTechnology = ({ slides, parentWidth, changeText, setSlide}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [touchStartX, setTouchStartX] = useState(null)
   const [touchStartY, setTouchStartY] = useState(null)
   const [touchEndX, setTouchEndX] = useState(null)
   const [touchEndY, setTouchEndY] = useState(null)
+
+  useEffect(() => {
+    console.log(setSlide);
+    goToSlide(setSlide);
+  }, [setSlide]);
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
   const minSwipeDistance = 10; 
@@ -105,7 +110,7 @@ const ImageSliderTechnology = ({ slides, parentWidth ,changeText}) => {
           ))}
         </div>
       </div>
-      <div className="dotsContainerStylesNumber">
+      {/* <div className="dotsContainerStylesNumber">
         {slides.map((slide, slideIndex) => (
           slideIndex == currentIndex 
           ?
@@ -113,7 +118,7 @@ const ImageSliderTechnology = ({ slides, parentWidth ,changeText}) => {
           :
           <div className="dotNumber" key={slideIndex} onClick={() => goToSlide(slideIndex)}>{slideIndex + 1}</div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -958,13 +958,22 @@ li, a {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s;
+}
+
+.dotNumber:hover{
+    border: 1px solid rgb(255, 255, 255, 0.9);
 }
 
 .activeDotNumber{
     transition: all 0.5s;
     color: rgb(0, 0, 0);
     background-color: white;
-    border: none;
+    /* border: none; */
+}
+
+.desktop.dotsContainerStylesNumber{
+    display: none;
 }
 
 .dotsContainerStylesNumber{
@@ -996,16 +1005,23 @@ li, a {
         display: none;
     }
 
+    .buttonsAndText{
+        display: flex;
+    }
+
     .techTextGrid{
-        margin-left: 325px;
+        margin-left: 165px;
         margin-top: 0;
+    }
+
+    .textGridTech{
+        margin-left: 80px;
     }
 
     .techGrid{
         display: flex;
         align-items: start;
         justify-content: start;
-        outline: 1px solid wheat;
     }
 
     .containerStylesDesktop.techPage{
@@ -1015,9 +1031,7 @@ li, a {
 
     .dotsContainerStylesNumber{
         flex-direction: column;
-        position: relative;
-        top: -89%;
-        right: 280%;
+
     }
 
     .dotNumber{
