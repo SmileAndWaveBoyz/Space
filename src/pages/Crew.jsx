@@ -21,8 +21,8 @@ function Crew() {
     switch (index) {
       case 0:
         setTitleHeading("COMMANDER");
-        setCrewHeading("Mission Specialist");
-        setInfoTextCrew("Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.");
+        setCrewHeading("Douglas Hurley");
+        setInfoTextCrew("Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.");
         break;
     
       case 1:
@@ -117,14 +117,9 @@ function Crew() {
       </div>
         <div className='crewGrid'>
         <div className="crewBox">
-          <nav className="plannetSelectNav">
-            <ul className='navPlannetItems'>
-
-            </ul>
-          </nav>
           <h3 className="titleHeading">{titleHeading}</h3>
           <h2 className="crewHeading">{crewHeading}</h2>
-            <p className="infoTextCrew">{infoTextCrew}</p>
+          <p className="infoTextCrew">{infoTextCrew}</p>
         </div>
           <Media query="(min-width: 1200px) and (max-width: 1400px)">
             {(matches) => {

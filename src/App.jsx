@@ -3,6 +3,7 @@ import {NavLink, Link, Route, Routes} from 'react-router-dom';
 import Destinations from "./pages/Destinations";
 import Main from "./pages/Main";
 import Crew from './pages/Crew';
+import Technology from './pages/Technology';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         break;
     }
   }
+  
 
   return (
     <div id={pageName} className='rootDiv'>
@@ -51,6 +53,7 @@ function App() {
         <Route path='/' element={<Main/>} />
         <Route path='/destinations' element={<Destinations/>} />
         <Route path='/crew' element={<Crew/>} />
+        <Route path='/technology' element={<Technology/>} />
       </Routes>
     </div>
 
