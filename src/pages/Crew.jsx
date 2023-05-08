@@ -17,7 +17,7 @@ function Crew() {
   const[infoTextCrew, setInfoTextCrew] = useState("Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.");
   
   const[windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const[carouselHeight, setCarouselHeight] = useState(window.innerWidth / 2.47741935484);
+  const[carouselHeight, setCarouselHeight] = useState(window.innerWidth / 1.466367713);
   const[currentSlide, setCurrentSlide] = useState(0);
 
   window.addEventListener('resize', (event) => {
@@ -68,7 +68,7 @@ function Crew() {
 
         <div className='containerStylesMobile techPage' style= {{height: carouselHeight}}>
           <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeSlide={changeSlide} setSlide={currentSlide}/>
-
+          <div className="infoTextLine"></div>
           <div className="dotsContainerStylesNumber mobile">
               {slides.map((slide, slideIndex) => (
                 slideIndex == currentSlide 
@@ -79,8 +79,6 @@ function Crew() {
               ))}
           </div>
         </div>
-
-          <div className="infoTextLine"></div>
 
           <div className="techGrid">
             <div className="textGrid">

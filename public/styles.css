@@ -123,18 +123,10 @@ li, a {
     color: var(--colour-primary);
 }
 
-.navItemsContainer{
-    width: 0;
-    padding: 0;
-    position: absolute;
-    z-index: 3;
-    top: -18px;
-    right: 0;
-    min-height: 102%;
-    background-color: #707070;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    transition: all 0.3s;
+@media screen and (max-width: 768px) {
+    .navItemsContainer{
+        width: 0;
+    }
 }
 
 .expanded .xButton{
@@ -153,8 +145,26 @@ li, a {
     color: var(--colour-primary);
 }
 
+.navItemsContainer{
+    padding: 0;
+    position: absolute;
+    z-index: 3;
+    top: -18px;
+    right: 0;
+    min-height: 102%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    transition: all 0.3s;
+}
+
 .navItems{
+    position: relative;
     margin-top: 12rem;
+    z-index: 4;
+    outline: 1px wheat solid;
+    
 }
 
 .expanded .navItemsContainer{
@@ -213,6 +223,14 @@ li, a {
 
 
 @media screen and (min-width: 768px) {
+    .navItemsContainer{
+        /* width: 50%; */
+    }
+
+    .navItems li{
+        display: block;
+    }
+
     .xButton{
         display: none;
     }
@@ -256,13 +274,19 @@ li, a {
         padding: 0;
     }
 
+    .navItemsContainer{
+        margin-top: 2rem;
+    }
+
     .navItems{
         margin: 0;
         position: static;
         display: flex;
+        align-items: center;
         background-color: rgb(255, 255, 255, 0.05);
         width: 50rem;
         padding: 2rem 2rem;
+        
     }
 
     .navItems li{
@@ -354,6 +378,7 @@ li, a {
         width: 95rem;
         margin-right: 0;
         padding-left: 100px;
+        height: 9.6rem;
     }
 
 
@@ -577,9 +602,8 @@ li, a {
 .infoTextLine{
     width: 327px;
     height: 1px;
-    background: #383B4B;
+    background: #4b4a4a;
     margin: 0 auto;
-    margin-bottom: 32px;
 }
 
 .estTravelTimeTextBox{
@@ -852,7 +876,6 @@ li, a {
 
     .infoTextLine{
         display: none;
-
     }
 
     .crewImage{
@@ -865,6 +888,10 @@ li, a {
 @media screen and (min-width: 1200px) {
     *{
         /* outline: 1px solid white; */
+    }
+
+    .infoTextLine{
+        display: none;
     }
 
     .titleHeading{

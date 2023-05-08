@@ -30,10 +30,10 @@ function App() {
         <div className="navItemsContainer">
           <button className='xButton' onClick={() => setMenuCollapse(false)}>x</button>
           <ul className='navItems'>
-            <li className='firstNumberNav'><p>00</p><NavLink to="/">HOME</NavLink></li>
-            <li><p>01</p><NavLink to="/destination">DESTINATION</NavLink></li>
-            <li><p>02</p><NavLink to="/crew">CREW</NavLink></li>
-            <li><p>03</p><NavLink to="/technology">TECHNOLOGY</NavLink></li>
+            <li className='firstNumberNav' onClick={() => setMenuCollapse(false)}><p>00</p><NavLink to="/">HOME</NavLink></li>
+            <li onClick={() => setMenuCollapse(false)}><p>01</p><NavLink to="/destination">DESTINATION</NavLink></li>
+            <li onClick={() => setMenuCollapse(false)}><p>02</p><NavLink to="/crew">CREW</NavLink></li>
+            <li onClick={() => setMenuCollapse(false)}><p>03</p><NavLink to="/technology">TECHNOLOGY</NavLink></li>
           </ul>
         </div>
       </nav>
