@@ -54,6 +54,7 @@ function Technology() {
                 <h2 className="pickYourDestination animate__animated animate__backInDown">SPACE LAUNCH 101</h2>
             </div>
         </div>
+
         <div className='containerStylesMobile techPage' style= {{height: carouselHeight}}>
           <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeSlide={changeSlide} setSlide={currentSlide}/>
           <div className="dotsContainerStylesNumber mobile">
@@ -66,6 +67,7 @@ function Technology() {
               ))}
           </div>
         </div>
+        
         <div className="techGrid">
           <div className="techTextGrid">
             <div className="buttonsAndText">

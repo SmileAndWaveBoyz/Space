@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import ImageSlider from './ImageSlider';
 import Media from "react-media";
-
+import ImageSliderTechnology from './Components/ImageSliderTechnology';
 
 function Crew() { 
   
@@ -15,9 +15,18 @@ function Crew() {
   const[titleHeading, setTitleHeading] = useState("COMMANDER");
   const[crewHeading, setCrewHeading] = useState("Douglas Hurley");
   const[infoTextCrew, setInfoTextCrew] = useState("Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.");
+  
+  const[windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const[carouselHeight, setCarouselHeight] = useState(window.innerWidth / 2.47741935484);
+  const[currentSlide, setCurrentSlide] = useState(0);
 
-  function changeText(index) {
-    console.log(index);
+  window.addEventListener('resize', (event) => {
+    setWindowWidth(event.target.innerWidth);
+    setCarouselHeight((window.innerWidth / 2.47741935484) + "px");
+  });
+
+  function changeSlide(index) {
+    setCurrentSlide(index);
     switch (index) {
       case 0:
         setTitleHeading("COMMANDER");
@@ -49,120 +58,56 @@ function Crew() {
   }
   
   return (
-    <main className='crewHero'>
+    <main>
       <div className="imageBox">
         <div className="pickYourDestinationBox">
           <h2 className="pickYourDestinationNumber">02</h2>
           <h2 className="pickYourDestination animate__animated animate__backInDown">MEET YOUR CREW</h2>
         </div>
-          {/* <img className="crewImage" src="./assets/crew/image-douglas-hurley.webp" alt="" /> */}
-        
-
-          <Media query="(max-width: 665px)">
-            {(matches) => {
-              return matches ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={310} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
-
-          
-          <Media query="(min-width: 666px) and (max-width: 767px)">
-            {(matches) => {
-              return matches 
-              ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={580} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
-
-          <Media query="(min-width: 768px) and (max-width: 1023px)">
-            {(matches) => {
-              return matches 
-              ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={800} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
-
-          <Media query="(min-width: 1024px) and (max-width: 1179px)">
-            {(matches) => {
-              return matches 
-              ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={960} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
-
-          <Media query="(min-width: 1179px) and (max-width: 1200px)">
-            {(matches) => {
-              return matches 
-              ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={1150} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
-        
-          <div className="infoTextLine"></div>
       </div>
-        <div className='crewGrid'>
-        <div className="crewBox">
-          <h3 className="titleHeading">{titleHeading}</h3>
-          <h2 className="crewHeading">{crewHeading}</h2>
-          <p className="infoTextCrew">{infoTextCrew}</p>
+
+        <div className='containerStylesMobile techPage' style= {{height: carouselHeight}}>
+          <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeSlide={changeSlide} setSlide={currentSlide}/>
+
+          <div className="dotsContainerStylesNumber mobile">
+              {slides.map((slide, slideIndex) => (
+                slideIndex == currentSlide 
+                ?
+                <div className="dot activeDot" key={slideIndex} onClick={() => changeSlide(slideIndex)}>●</div>
+                :
+                <div className="dot" key={slideIndex} onClick={() => changeSlide(slideIndex)}>●</div>
+              ))}
+          </div>
         </div>
-          <Media query="(min-width: 1200px) and (max-width: 1400px)">
-            {(matches) => {
-              return matches 
-              ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={600} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
-          <Media query="(min-width: 1400px) and (max-width: 1800px)">
-            {(matches) => {
-              return matches 
-              ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={1200} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
-          <Media query="(min-width: 1800px) and (max-width: 2500px)">
-            {(matches) => {
-              return matches 
-              ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={1600} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
-          <Media query="(min-width: 2500px)">
-            {(matches) => {
-              return matches 
-              ? 
-              <div className='containerStyles'>
-                <ImageSlider slides={slides} parentWidth={2400} changeText={changeText}/>
-              </div>
-              : null;
-            }}
-          </Media>
 
-      </div>
+          <div className="infoTextLine"></div>
+
+          <div className="techGrid">
+            <div className="textGrid">
+              <div className="buttonsAndText Crew">
+
+                <div className="textGridCrew">
+                  <h3 className="titleHeading">{titleHeading}</h3>
+                  <h2 className="crewHeading">{crewHeading}</h2>
+                  <p className="infoTextCrew">{infoTextCrew}</p>
+                </div>
+
+                <div className="dotsContainerStylesCrew desktop">
+                  {slides.map((slide, slideIndex) => (
+                    slideIndex == currentSlide 
+                    ?
+                    <div className="dot activeDot" key={slideIndex} onClick={() => changeSlide(slideIndex)}>●</div>
+                    :
+                    <div className="dot" key={slideIndex} onClick={() => changeSlide(slideIndex)}>●</div>
+                  ))}
+                </div> 
+              </div>
+            </div>
+            <div className='containerStylesDesktop crewPage' style= {{height: "712px", width:"568.07px", transform: `translate(${0}px, ${-50}px)`}}>
+              <ImageSliderTechnology slides={slides} parentWidth={568.07} changeSlide={changeSlide} setSlide={currentSlide}/>
+            </div>
+        </div>
+
   
     </main> 
   );
