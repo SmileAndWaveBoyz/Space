@@ -1,6 +1,5 @@
 *, *::before, *::after{
     box-sizing: border-box;
-    /* outline: 1px solid white; */
 }
 
 :root{
@@ -152,19 +151,18 @@ li, a {
     top: -18px;
     right: 0;
     min-height: 102%;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(25px);
     margin-bottom: 0;
     padding-bottom: 0;
     transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
 }
 
 .navItems{
     position: relative;
     margin-top: 12rem;
     z-index: 4;
-    outline: 1px wheat solid;
-    
+    min-height: 102%;
 }
 
 .expanded .navItemsContainer{
@@ -208,33 +206,8 @@ li, a {
     position: relative;
 }
 
-.navBar .navItems .active::after{
-    transition: all 1s;
-    position: absolute;
-    content: "";
-    background-color: #ffffff;
-    top: 27px;
-    left: 0px;
-    right: 0px;
-    width: 50px;
-    height: 3px;
-}
-
-
 
 @media screen and (min-width: 768px) {
-    .navItemsContainer{
-        /* width: 50%; */
-    }
-
-    .navItems li{
-        display: block;
-    }
-
-    .xButton{
-        display: none;
-    }
-
     #home{
         background-image: url("./assets/home/background-home-tablet.jpg");
         background-size: 105%;
@@ -259,6 +232,10 @@ li, a {
         display: none;
     }
 
+    .expanded .xButton{
+        display: none;
+    }
+
     .logo{
         height: 4.8rem;
         width: 4.8rem;
@@ -268,37 +245,60 @@ li, a {
     }
 
     .navBar{
-        background-color: rgb(255, 255, 255, 0);
-        display: flex;
-        margin: 0;
         padding: 0;
     }
 
     .navItemsContainer{
-        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        height: 9.6rem;
+        margin-right: 0;
+        width: 45rem;
+    }
+    
+    .navItems{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-height: 9.6rem;
+        margin: 0;
+        padding: 0;
     }
 
-    .navItems{
-        margin: 0;
-        position: static;
-        display: flex;
-        align-items: center;
-        background-color: rgb(255, 255, 255, 0.05);
-        width: 50rem;
-        padding: 2rem 2rem;
-        
+    .expanded .navItemsContainer{
+        width: 45rem;
+    }
+    
+    .xButton{
+        display: none;
     }
 
     .navItems li{
+        display: block;
         margin: 1rem 22px;
     }
 
+    .navItems li a{
+        font-size: 1.4rem;
+        letter-spacing: 2.3625px;
+        color: #FFFFFF;
+    }
+
+    .navBar .navItems li p {
+        display: none;
+    }
+
     .navBar .navItems .active::after{
+        position: absolute;
         content: "";
         background-color: #ffffff;
-        top: 52px;
+        top: 5.5rem;
         right: 0px;
-        width: 50px;
+        width: 100%;
         height: 3px;
     }
 }
@@ -348,13 +348,18 @@ li, a {
 
     .logo{
         margin-left: 4rem;
-        margin-top: 2rem;
+        margin-top: 6.2rem;
     }
 
     h1{
         font-size: 15rem;
     }
 
+    .navItemsContainer{
+        width: 83rem;
+        margin-top: 4rem;
+    }
+    
     .navItems li a{
         font-size: 2rem;
     }
@@ -368,19 +373,6 @@ li, a {
         font-weight: 600;
     }
 
-    .navBar{
-        margin-top: 4rem;
-        height: 9.6rem;
-        position: relative;
-    }
-
-    .navBar .navItems{
-        width: 95rem;
-        margin-right: 0;
-        padding-left: 100px;
-        height: 9.6rem;
-    }
-
 
     .firstHeading{
         margin-top: 25rem;
@@ -391,19 +383,10 @@ li, a {
         position: absolute;
         content: "";
         background-color: rgb(255, 255, 255, 0.3);
-        top: 42px;
+        top: 8.5rem;
         right: 920px;
         width: 500px;
         height: 2px;
-    }
-    
-    .navBar .navItems li a{
-        margin-right: 40px;
-    }
-
-    .navBar .navItems .active::after{
-        right: 0;
-        width: 85px;
     }
 }
 
@@ -495,7 +478,6 @@ li, a {
 
     .hero{
         margin-top: 6rem;
-        /* outline: 1px solid wheat; */
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -739,7 +721,6 @@ li, a {
         width: 472px;
         margin-top: 160px;
         transform: translate(100px);
-        /* outline: 1px solid white; */
     }
 
     .navPlannetItems{
@@ -822,6 +803,16 @@ li, a {
     margin-top: 270px;
 }
 
+.dotsContainerStylesNumber.mobile{
+    margin: 0;
+    padding: 0;
+}
+
+.containerStylesMobile.crewPage{
+    margin-bottom: 0;
+    padding: 0;
+}
+
 .titleHeading{
     font-weight: 400;
     font-size: 1.6rem;
@@ -868,8 +859,8 @@ li, a {
     .infoTextCrew{
         font-size: 1.6rem;
         line-height: 2.8rem;
-        margin-left: 155px;
-        margin-right: 155px;
+        margin-left: auto;
+        margin-right: auto;
         width: 45.8rem;
         padding-bottom: 2rem;
     }
@@ -882,14 +873,19 @@ li, a {
         height: 572px;
     }
 
+    .containerStylesMobile.crewPage{
+        position: absolute;
+        top: 56rem
+    }
+
+    .dotsContainerStylesNumber.mobile{
+        position: absolute;
+        top: 48rem
+    }
 }
 
 
 @media screen and (min-width: 1200px) {
-    *{
-        /* outline: 1px solid white; */
-    }
-
     .infoTextLine{
         display: none;
     }
@@ -1029,8 +1025,13 @@ li, a {
     display: none;
 }
 
-.containerStylesMobile.techPage{
-    margin-bottom: 8rem;
+.dotsContainerStylesNumber.mobile.techPage{
+    margin-top: 3.4rem;
+    position: static;
+}
+
+.textGridTech{
+    margin-top: 12rem;
 }
 
 .dotNumber{
@@ -1062,8 +1063,6 @@ li, a {
     /* border: none; */
 }
 
-
-
 .dotsContainerStylesNumber{
     display: flex;
     align-items: center;
@@ -1076,6 +1075,11 @@ li, a {
 
 
 @media screen and (min-width: 768px) {
+
+    .textGridTech{
+        margin-top: 14rem;
+    }
+
     .containerStylesMobile.techPage{
         margin-bottom: 10rem;
     }
@@ -1087,6 +1091,9 @@ li, a {
 }
 
 @media screen and (min-width: 1280px) {
+    .textGridTech{
+        margin-top: 0rem;
+    }
     .containerStylesMobile{
         display: none;
     }

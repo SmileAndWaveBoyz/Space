@@ -57,7 +57,7 @@ function Technology() {
 
         <div className='containerStylesMobile techPage' style= {{height: carouselHeight}}>
           <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeSlide={changeSlide} setSlide={currentSlide}/>
-          <div className="dotsContainerStylesNumber mobile">
+          <div className="dotsContainerStylesNumber mobile techPage">
               {slides.map((slide, slideIndex) => (
                 slideIndex == currentSlide 
                 ?

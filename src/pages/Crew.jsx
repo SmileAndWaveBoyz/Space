@@ -65,18 +65,19 @@ function Crew() {
           <h2 className="pickYourDestination animate__animated animate__backInDown">MEET YOUR CREW</h2>
         </div>
       </div>
-
-        <div className='containerStylesMobile techPage' style= {{height: carouselHeight}}>
-          <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeSlide={changeSlide} setSlide={currentSlide}/>
-          <div className="infoTextLine"></div>
+        <div>
+          <div className='containerStylesMobile crewPage' style= {{height: carouselHeight}}>
+            <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeSlide={changeSlide} setSlide={currentSlide}/>
+            <div className="infoTextLine"></div>
+          </div>
           <div className="dotsContainerStylesNumber mobile">
-              {slides.map((slide, slideIndex) => (
-                slideIndex == currentSlide 
-                ?
-                <div className="dot activeDot" key={slideIndex} onClick={() => changeSlide(slideIndex)}>●</div>
-                :
-                <div className="dot" key={slideIndex} onClick={() => changeSlide(slideIndex)}>●</div>
-              ))}
+                {slides.map((slide, slideIndex) => (
+                  slideIndex == currentSlide 
+                  ?
+                  <div className="dot activeDot" key={slideIndex} onClick={() => changeSlide(slideIndex)}>●</div>
+                  :
+                  <div className="dot" key={slideIndex} onClick={() => changeSlide(slideIndex)}>●</div>
+                ))}
           </div>
         </div>
 
