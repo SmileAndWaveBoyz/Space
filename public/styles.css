@@ -90,12 +90,7 @@ h5{
     justify-content: space-between;
     align-items: start;
     padding: 2.4rem 2rem 2rem 2rem;
-    /* background-color: rgb(255, 255, 255, 0.0390); */
     transition: all 0.2s;
-}
-
-.navBar.expanded{
-    height: 22.5rem;
 }
 
 .logo{
@@ -128,15 +123,65 @@ li, a {
     color: var(--colour-primary);
 }
 
-.navItems{
+.navItemsContainer{
+    width: 0;
+    padding: 0;
     position: absolute;
-    top: 5rem;
+    z-index: 3;
+    top: -18px;
+    right: 0;
+    min-height: 102%;
+    background-color: #707070;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    transition: all 0.3s;
+}
+
+.expanded .xButton{
+    display: block;
+}
+
+.xButton{
     display: none;
+    position: relative;
+    top: 30px;
+    left: 210px;
+    border: 0;
+    outline: 0;
+    background-color: rgb(0, 0, 0, 0);
+    font-size: 4rem;
+    color: var(--colour-primary);
+}
+
+.navItems{
+    margin-top: 12rem;
+}
+
+.expanded .navItemsContainer{
+    width: 70%;
+}
+
+.expanded .navItems li{
+    display: block;
 }
 
 .navItems li{
-    margin-top: 1rem;
+    display: none;
+    margin-top: 5rem;
     margin-left: 1rem;
+}
+
+.navBar .navItems li p{
+    display: inline;
+    margin-right: 1rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2.2rem;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.navItems li:hover p{
+    color: white;
 }
 
 .navItems li a{
@@ -149,14 +194,9 @@ li, a {
     color: #ffffff;
 }
 
-.expanded .navItems{
-    display: block;
-}
-
 .navBar .navItems li{
     position: relative;
 }
-
 
 .navBar .navItems .active::after{
     transition: all 1s;
@@ -170,11 +210,13 @@ li, a {
     height: 3px;
 }
 
-.navBar .navItems li p{
-    display: none;
-}
+
 
 @media screen and (min-width: 768px) {
+    .xButton{
+        display: none;
+    }
+
     #home{
         background-image: url("./assets/home/background-home-tablet.jpg");
         background-size: 105%;
