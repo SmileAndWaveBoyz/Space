@@ -20,7 +20,7 @@ const slidesContainerOverflowStyles = {
   height: "100%",
 };
 
-const ImageSliderTechnology = ({ slides, parentWidth, changeText, setSlide}) => {
+const ImageSliderTechnology = ({ slides, parentWidth, changeSlide, setSlide}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [touchStartX, setTouchStartX] = useState(null)
@@ -29,10 +29,11 @@ const ImageSliderTechnology = ({ slides, parentWidth, changeText, setSlide}) => 
   const [touchEndY, setTouchEndY] = useState(null)
 
   useEffect(() => {
-    console.log(setSlide);
     goToSlide(setSlide);
+    // console.log("set slide is: " + setSlide + " current slide is " + currentIndex);
   }, [setSlide]);
 
+  //This code is just to detect swipes on mobile devices
   // the required distance between touchStart and touchEnd to be detected as a swipe
   const minSwipeDistance = 10; 
 
@@ -77,6 +78,7 @@ const ImageSliderTechnology = ({ slides, parentWidth, changeText, setSlide}) => 
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
+    console.log("goToSlide");
   };
 
   const getSlideStylesWithBackground = (slideIndex) => ({
@@ -93,11 +95,11 @@ const ImageSliderTechnology = ({ slides, parentWidth, changeText, setSlide}) => 
 
 
   useEffect(() => {   //This will update the text in the body of the page 
-    changeTextComponent(currentIndex);
+    changeSlideComponent(currentIndex);
   },[currentIndex])
 
-  function changeTextComponent(i) {   //This will update the text in the body of the page 
-    changeText(i);
+  function changeSlideComponent(i) {   //This will update the text in the body of the page 
+    changeSlide(i);
   }
 
   return (

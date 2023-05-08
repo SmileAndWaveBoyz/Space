@@ -23,11 +23,8 @@ function Technology() {
     setCarouselHeight((window.innerWidth / 2.47741935484) + "px");
   });
 
-  function setSlide(i) {
-    setCurrentSlide(i);
-  }
-
-  function changeText(index) {
+  function changeSlide(index) {
+    setCurrentSlide(index);
     switch (index) {
       case 0:
         setCrewHeading("LAUNCH VEHICLE");
@@ -58,8 +55,16 @@ function Technology() {
             </div>
         </div>
         <div className='containerStylesMobile techPage' style= {{height: carouselHeight}}>
-          <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeText={changeText}/>
-
+          <ImageSliderTechnology slides={slides} parentWidth={windowWidth} changeSlide={changeSlide} setSlide={currentSlide}/>
+          <div className="dotsContainerStylesNumber mobile">
+              {slides.map((slide, slideIndex) => (
+                slideIndex == currentSlide 
+                ?
+                <div className="dotNumber activeDotNumber" key={slideIndex} onClick={() => changeSlide(slideIndex)}>{slideIndex + 1}</div>
+                :
+                <div className="dotNumber" key={slideIndex} onClick={() => changeSlide(slideIndex)}>{slideIndex + 1}</div>
+              ))}
+          </div>
         </div>
         <div className="techGrid">
           <div className="techTextGrid">
@@ -68,9 +73,9 @@ function Technology() {
                   {slides.map((slide, slideIndex) => (
                     slideIndex == currentSlide 
                     ?
-                    <div className="dotNumber activeDotNumber" key={slideIndex} onClick={() => setSlide(slideIndex)}>{slideIndex + 1}</div>
+                    <div className="dotNumber activeDotNumber" key={slideIndex} onClick={() => changeSlide(slideIndex)}>{slideIndex + 1}</div>
                     :
-                    <div className="dotNumber" key={slideIndex} onClick={() => setSlide(slideIndex)}>{slideIndex + 1}</div>
+                    <div className="dotNumber" key={slideIndex} onClick={() => changeSlide(slideIndex)}>{slideIndex + 1}</div>
                   ))}
                 </div> 
               <div className="textGridTech">
@@ -81,7 +86,7 @@ function Technology() {
             </div>
           </div>
             <div className='containerStylesDesktop techPage' style= {{height: "527px", width:"515px"}}>
-              <ImageSliderTechnology slides={slidesPortrait} parentWidth={515} changeText={changeText} setSlide={currentSlide}/>
+              <ImageSliderTechnology slides={slidesPortrait} parentWidth={515} changeSlide={changeSlide} setSlide={currentSlide}/>
             </div>
         </div>
     </main>

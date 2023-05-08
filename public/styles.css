@@ -1031,13 +1031,20 @@ li, a {
 
     .dotsContainerStylesNumber{
         flex-direction: column;
-
     }
 
     .dotNumber{
         font-size: 2rem;
         width: 8rem;
         height: 8rem;
-    }   
+    } 
+    
+    .desktop.dotsContainerStylesNumber{
+        display: block;
+    }
+
+    .mobile.dotsContainerStylesNumber{
+        display: none;
+    }
     
 }
