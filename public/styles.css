@@ -841,7 +841,7 @@ li, a {
     z-index: 1;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (min-height: 415px) {
     .crewBox{
         margin-top: 0;
     }
@@ -862,7 +862,7 @@ li, a {
         margin-left: auto;
         margin-right: auto;
         width: 45.8rem;
-        padding-bottom: 2rem;
+        padding-bottom: 55rem;
     }
 
     .infoTextLine{
@@ -875,7 +875,8 @@ li, a {
 
     .containerStylesMobile.crewPage{
         position: absolute;
-        top: 56rem
+        top: 56rem;
+        z-index: 5;
     }
 
     .dotsContainerStylesNumber.mobile{
@@ -911,6 +912,7 @@ li, a {
         font-size: 1.8rem;
         line-height: 32px;
         width: 44.4rem;
+        padding-bottom: 0;
     }
 
     .textGrid{

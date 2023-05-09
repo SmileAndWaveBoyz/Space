@@ -17,12 +17,13 @@ function Crew() {
   const[infoTextCrew, setInfoTextCrew] = useState("Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.");
   
   const[windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const[carouselHeight, setCarouselHeight] = useState(window.innerWidth / 1.466367713);
+  const[carouselHeight, setCarouselHeight] = useState(windowWidth / 1.466367713);
   const[currentSlide, setCurrentSlide] = useState(0);
+
 
   window.addEventListener('resize', (event) => {
     setWindowWidth(event.target.innerWidth);
-    setCarouselHeight((window.innerWidth / 2.47741935484) + "px");
+    setCarouselHeight((window.innerWidth / 1.466367713) + "px");
   });
 
   function changeSlide(index) {
