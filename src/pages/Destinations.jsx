@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 
-function Destinations() {  
+function Destinations() { 
+  const [plannetImage, setPlannetImage] = useState("./assets/destination/image-moon.webp");
+  const [planetHeading, setPlanetHeading] = useState("MOON");
+  const [infoText, setInfoText] = useState("See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.");
+  const [avgDistanceNumber, setAvgDistanceNumber] = useState("384,000 KM");
+  const [estTravelNumber, setEstTravelNumber] = useState("3 DAYS");
+  const [activeButton, setActiveButton] = useState(0);
+
   return (
     <main className='hero'>
       <div className="imageBox">
@@ -9,68 +16,56 @@ function Destinations() {
           <h2 className="pickYourDestinationNumber">01</h2>
           <h2 className="pickYourDestination animate__animated animate__backInDown">PICK YOUR DESTINATION</h2>
         </div>
-          <img className="plannetImage" src="./assets/destination/image-moon.webp" alt="" />
+          <img className="plannetImage" src={plannetImage} alt="" />
       </div>
       <div className="plannetBox">
         <nav className="plannetSelectNav">
           <ul className='navPlannetItems'>
-            <li><Link className="moonLink active" onClick={() => {
-                document.querySelector(".moonLink").classList.add("active");
-                document.querySelector(".marsLink").classList.remove("active");
-                document.querySelector(".europaLink").classList.remove("active");
-                document.querySelector(".titanLink").classList.remove("active");
-                document.querySelector(".plannetImage").src="./assets/destination/image-moon.webp";
-                document.querySelector(".planetHeading").innerHTML="MOON";
-                document.querySelector(".infoText").innerHTML="See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.";
-                document.querySelector(".avgDistanceNumber").innerHTML="384,000 KM";
-                document.querySelector(".estTravelNumber").innerHTML="3 DAYS";
+            <li><Link className={activeButton == 0 ? "active" : ""} onClick={() => {
+                setPlannetImage("./assets/destination/image-moon.webp");
+                setPlanetHeading("MOON");
+                setInfoText("See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.");
+                setAvgDistanceNumber("384,000 KM");
+                setEstTravelNumber(".estTravelNumber");
+                setActiveButton(0);
               }}>MOON</Link></li>
-            <li><Link className="marsLink" onClick={() => {
-                document.querySelector(".marsLink").classList.add("active");
-                document.querySelector(".moonLink").classList.remove("active");
-                document.querySelector(".europaLink").classList.remove("active");
-                document.querySelector(".titanLink").classList.remove("active");
-                document.querySelector(".plannetImage").src="./assets/destination/image-mars.webp";
-                document.querySelector(".planetHeading").innerHTML="MARS";
-                document.querySelector(".infoText").innerHTML="Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!";
-                document.querySelector(".avgDistanceNumber").innerHTML="225 MIL. KM";
-                document.querySelector(".estTravelNumber").innerHTML="9 MONTHS";
+            <li><Link className={activeButton == 1 ? "active" : ""} onClick={() => {
+                setPlannetImage("./assets/destination/image-mars.webp");
+                setPlanetHeading("MARS");
+                setInfoText("Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!");
+                setAvgDistanceNumber("225 MIL. KM");
+                setEstTravelNumber("9 MONTHS");
+                setActiveButton(1);
               }}>MARS</Link></li>
-            <li><Link className="europaLink" onClick={() => {
-                document.querySelector(".europaLink").classList.add("active");
-                document.querySelector(".moonLink").classList.remove("active");
-                document.querySelector(".titanLink").classList.remove("active");
-                document.querySelector(".marsLink").classList.remove("active");
-                document.querySelector(".plannetImage").src="./assets/destination/image-europa.webp";
-                document.querySelector(".planetHeading").innerHTML="EUROPA";
-                document.querySelector(".infoText").innerHTML="The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.";
-                document.querySelector(".avgDistanceNumber").innerHTML="628 MIL. KM";
-                document.querySelector(".estTravelNumber").innerHTML="3 YEARS";
+            <li><Link className={activeButton == 2 ? "active" : ""} onClick={() => {
+                setPlannetImage("./assets/destination/image-europa.webp");
+                setPlanetHeading("EUROPA");
+                setInfoText("The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.");
+                setAvgDistanceNumber("628 MIL. KM");
+                setEstTravelNumber("3 YEARS");
+                setActiveButton(2);
               }}>EUROPA</Link></li>
-            <li><Link className="titanLink" onClick={() => {
-                document.querySelector(".titanLink").classList.add("active");
-                document.querySelector(".moonLink").classList.remove("active");
-                document.querySelector(".marsLink").classList.remove("active");
-                document.querySelector(".europaLink").classList.remove("active");
-                document.querySelector(".plannetImage").src="./assets/destination/image-titan.webp";
-                document.querySelector(".planetHeading").innerHTML="TITAN";
-                document.querySelector(".infoText").innerHTML="The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.";
-                document.querySelector(".avgDistanceNumber").innerHTML="1.6 BIL. KM";
-                document.querySelector(".estTravelNumber").innerHTML="7 YEARS ";
+            <li><Link className={activeButton == 3 ? "active" : ""} onClick={() => {
+                setPlannetImage("./assets/destination/image-titan.webp");
+                setPlanetHeading("TITAN");
+                setInfoText("The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.");
+                setAvgDistanceNumber("1.6 BIL. KM");
+                setEstTravelNumber("7 YEARS ");
+                setActiveButton(3);
               }}>TITAN</Link></li>
           </ul>
         </nav>
-        <h1 className="planetHeading">MOON</h1>
-          <p className="infoText">See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+        <h1 className="planetHeading">{planetHeading}</h1>
+          <p className="infoText">{infoText}</p>
           <div className="infoTextLine"></div>
           <footer>
             <div className="distanceTextBox">
               <h4>AVG. DISTANCE</h4>
-              <p className="avgDistanceNumber">384,000 KM</p>
+              <p className="avgDistanceNumber">{avgDistanceNumber}</p>
             </div>
             <div className="estTravelTimeTextBox">
               <h4>EST. TRAVEL TIME</h4>
-              <p className="estTravelNumber">3 DAYS</p>
+              <p className="estTravelNumber">{estTravelNumber}</p>
             </div>
           </footer>
       </div>
