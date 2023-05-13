@@ -83,7 +83,7 @@ function Technology() {
               <div className="textGridTech">
                 <h3 className="titleHeading techPage">THE TERMINOLOGY...</h3>
                 <h2 className="crewHeading">{crewHeading}</h2>
-                <p className="infoTextCrew">{infoTextCrew}</p>
+                <p className="infoTextTech">{infoTextCrew}</p>
               </div>
             </div>
           </div>

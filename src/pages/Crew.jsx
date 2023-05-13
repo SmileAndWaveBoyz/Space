@@ -1,6 +1,4 @@
 import React, {useState} from 'react'
-import ImageSlider from './ImageSlider';
-import Media from "react-media";
 import ImageSliderTechnology from './Components/ImageSliderTechnology';
 
 function Crew() { 
