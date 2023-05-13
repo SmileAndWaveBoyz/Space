@@ -20,16 +20,16 @@ function Destinations() {
       </div>
       <div className="plannetBox">
         <nav className="plannetSelectNav">
-          <ul className='navPlannetItems'>
-            <li><Link className={activeButton == 0 ? "active" : ""} onClick={() => {
+          <ul className={'navPlannetItems ' + planetHeading}>
+            <li><Link onClick={() => {
                 setPlannetImage("./assets/destination/image-moon.webp");
                 setPlanetHeading("MOON");
                 setInfoText("See our planet as you've never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.");
                 setAvgDistanceNumber("384,000 KM");
-                setEstTravelNumber(".estTravelNumber");
+                setEstTravelNumber("3 DAYS");
                 setActiveButton(0);
               }}>MOON</Link></li>
-            <li><Link className={activeButton == 1 ? "active" : ""} onClick={() => {
+            <li><Link onClick={() => {
                 setPlannetImage("./assets/destination/image-mars.webp");
                 setPlanetHeading("MARS");
                 setInfoText("Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!");
@@ -37,7 +37,7 @@ function Destinations() {
                 setEstTravelNumber("9 MONTHS");
                 setActiveButton(1);
               }}>MARS</Link></li>
-            <li><Link className={activeButton == 2 ? "active" : ""} onClick={() => {
+            <li><Link onClick={() => {
                 setPlannetImage("./assets/destination/image-europa.webp");
                 setPlanetHeading("EUROPA");
                 setInfoText("The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.");
@@ -45,7 +45,7 @@ function Destinations() {
                 setEstTravelNumber("3 YEARS");
                 setActiveButton(2);
               }}>EUROPA</Link></li>
-            <li><Link className={activeButton == 3 ? "active" : ""} onClick={() => {
+            <li><Link onClick={() => {
                 setPlannetImage("./assets/destination/image-titan.webp");
                 setPlanetHeading("TITAN");
                 setInfoText("The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.");
@@ -53,6 +53,8 @@ function Destinations() {
                 setEstTravelNumber("7 YEARS ");
                 setActiveButton(3);
               }}>TITAN</Link></li>
+
+              <div className="underlineDivPlannets"></div>
           </ul>
         </nav>
         <h1 className="planetHeading">{planetHeading}</h1>

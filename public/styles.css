@@ -467,7 +467,7 @@ li, a {
     border-radius: 100%;
     transition: all 0.3s;
     cursor: pointer;
-    outline: 0;
+    outline: 1px solid rgb(255, 255, 255, 0.4);
 }
 
 
@@ -580,6 +580,9 @@ li, a {
     display: flex;
     justify-content: center;
     padding: 0;
+    position: relative;
+    width: 23.75rem;
+    margin: 0 auto;
 }
 
 .navPlannetItems li{
@@ -598,14 +601,32 @@ li, a {
     color: #ffffff;
 }
 
-.navPlannetItems .active::after{
+.underlineDivPlannets{
     position: absolute;
-    content: "";
     background-color: #ffffff;
-    top: 27px;
-    left: 0px;
-    width: 40px;
+    top: 4rem;
     height: 3px;
+    transition: all 0.2s;
+}
+
+.MOON .underlineDivPlannets{
+    left: 6.5%;
+    width: 19.5%;
+}
+
+.MARS .underlineDivPlannets{
+    left: 29%;
+    width: 18.5%;
+}
+
+.EUROPA .underlineDivPlannets{
+    left: 50%;
+    width: 25.5%;
+}
+
+.TITAN .underlineDivPlannets{
+    left: 79%;
+    width: 19.5%;
 }
 
 .imageBox{
@@ -768,6 +789,30 @@ li, a {
         width: 472px;
         margin-top: 160px;
         transform: translate(100px);
+    }
+
+    .underlineDivPlannets{
+        top: 3rem;
+    }
+
+    .MOON .underlineDivPlannets{
+        left: 3%;
+        width: 18%;
+    }
+    
+    .MARS .underlineDivPlannets{
+        left: 26%;
+        width: 17.5%;
+    }
+    
+    .EUROPA .underlineDivPlannets{
+        left: 49.5%;
+        width: 24%;
+    }
+    
+    .TITAN .underlineDivPlannets{
+        left: 79%;
+        width: 19.5%;
     }
 
     .navPlannetItems{
