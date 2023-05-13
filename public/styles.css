@@ -92,6 +92,14 @@ h5{
     transition: all 0.2s;
 }
 
+.underlineDiv{
+    display: none;
+}
+
+.navItems{
+    position: relative;
+}
+
 .logo{
     height: 4rem;
     width: 4rem;
@@ -160,7 +168,6 @@ li, a {
 }
 
 .navItems{
-    position: relative;
     margin-top: 12rem;
     z-index: 4;
     min-height: 102%;
@@ -227,13 +234,21 @@ li, a {
     #technology{
         background-image: url("./assets/technology/background-technology-tablet.jpg");
         background-size: 105%;
-    }
+    }      
 
     .hamburgerButton{
         display: none;
     }
 
+    .xButton{
+        display: none;
+    }
+
     .expanded .xButton{
+        display: none;
+    }
+
+    .navBar .navItems li p {
         display: none;
     }
 
@@ -254,9 +269,13 @@ li, a {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        position: static;
         height: 9.6rem;
         margin-right: 0;
+        position: static; 
+         width: 45rem;
+    }
+
+    .expanded .navItemsContainer{
         width: 45rem;
     }
     
@@ -270,12 +289,33 @@ li, a {
         padding: 0;
     }
 
-    .expanded .navItemsContainer{
-        width: 45rem;
+    .underlineDiv{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        background-color: white;
+        transition: all 0.2s;
     }
-    
-    .xButton{
-        display: none;
+
+    .home .underlineDiv{
+        left: 5%;
+        width: 9%;
+    }
+
+    .destination .underlineDiv{
+        left: 24%;
+        width: 21%;
+    }
+
+    .crew .underlineDiv{
+        left: 55%;
+        width: 9%;
+    }
+
+    .technology .underlineDiv{
+        left: 75%;
+        width: 20%;
     }
 
     .navItems li{
@@ -288,20 +328,7 @@ li, a {
         letter-spacing: 2.3625px;
         color: #FFFFFF;
     }
-
-    .navBar .navItems li p {
-        display: none;
-    }
-
-    .navBar .navItems .active::after{
-        position: absolute;
-        content: "";
-        background-color: #ffffff;
-        top: 5.5rem;
-        right: 0px;
-        width: 100%;
-        height: 3px;
-    }
+    
 }
 
 @media screen and (min-width: 1180px) {
@@ -374,6 +401,25 @@ li, a {
         font-weight: 600;
     }
 
+    .home .underlineDiv{
+        left: 3.5%;
+        width: 13%;
+    }
+
+    .destination .underlineDiv{
+        left: 24%;
+        width: 22%;
+    }
+
+    .crew .underlineDiv{
+        left: 54%;
+        width: 12%;
+    }
+
+    .technology .underlineDiv{
+        left: 73.5%;
+        width: 23%;
+    }
 
     .firstHeading{
         margin-top: 25rem;

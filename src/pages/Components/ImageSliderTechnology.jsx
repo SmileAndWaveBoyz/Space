@@ -78,7 +78,6 @@ const ImageSliderTechnology = ({ slides, parentWidth, changeSlide, setSlide}) =>
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
-    console.log("goToSlide");
   };
 
   const getSlideStylesWithBackground = (slideIndex) => ({
