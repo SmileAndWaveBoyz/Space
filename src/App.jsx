@@ -22,14 +22,19 @@ function App() {
     let destination = location.pathname.slice(1);
     if (location.pathname ===  "/") {
       setPageName("home");
+      setMenuCollapse(false)
     } else if (location.pathname ===  "/destination"){
       setPageName(destination);
+      setMenuCollapse(false)
     } else if (location.pathname ===  "/crew"){
       setPageName(destination);
+      setMenuCollapse(false)
     } else if (location.pathname ===  "/technology"){
       setPageName(destination);
+      setMenuCollapse(false)
     } else{
       setPageName(destination);
+      setMenuCollapse(false)
     }
 
   }, [location]);
