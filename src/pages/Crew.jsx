@@ -20,6 +20,7 @@ function Crew() {
 
 
   window.addEventListener('resize', (event) => {
+    
     setWindowWidth(event.target.innerWidth);
     setCarouselHeight((window.innerWidth / 1.466367713) + "px");
   });
