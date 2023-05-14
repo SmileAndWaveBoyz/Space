@@ -976,7 +976,7 @@ li, a {
 }
 
 
-@media screen and (min-width: 1181px) {
+@media screen and (min-width: 1280px) {
     .infoTextLine{
         display: none;
     }
@@ -1053,7 +1053,15 @@ li, a {
     width: 100%;
 }
 
-@media screen and (min-width: 1181px) {
+@media screen and (min-width: 900px) {
+    .containerStylesMobile.crewPage{
+        width: 60%;
+        margin: 0 auto;
+        transform: translate(30%);
+    }
+}
+
+@media screen and (min-width: 1280px) {
     .containerStylesMobile{
         display: none;
     }

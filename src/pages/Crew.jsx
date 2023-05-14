@@ -14,15 +14,27 @@ function Crew() {
   const[crewHeading, setCrewHeading] = useState("Douglas Hurley");
   const[infoTextCrew, setInfoTextCrew] = useState("Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.");
   
-  const[windowWidth, setWindowWidth] = useState(window.innerWidth);
+  let reziseWindowWidth = window.innerWidth;
+  if (reziseWindowWidth > 900 && reziseWindowWidth < 1280) {
+    // console.log("We'll resize " + reziseWindowWidth);
+    reziseWindowWidth = 700;
+  } 
+
+  const[windowWidth, setWindowWidth] = useState(reziseWindowWidth);
   const[carouselHeight, setCarouselHeight] = useState(windowWidth / 1.466367713);
   const[currentSlide, setCurrentSlide] = useState(0);
 
 
-  window.addEventListener('resize', (event) => {
+  window.addEventListener('resize', () => {
+    reziseWindowWidth = window.innerWidth;
+    if (reziseWindowWidth > 900 && reziseWindowWidth < 1280) {
+      // console.log("We'll resize " + reziseWindowWidth);
+      reziseWindowWidth = 700;
+    } 
+    setWindowWidth(reziseWindowWidth);
+    setCarouselHeight((reziseWindowWidth / 1.466367713) + "px");
+    // console.log(window.innerWidth);
     
-    setWindowWidth(event.target.innerWidth);
-    setCarouselHeight((window.innerWidth / 1.466367713) + "px");
   });
 
   function changeSlide(index) {
