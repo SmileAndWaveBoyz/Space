@@ -15,7 +15,7 @@ function Destinations() {
           <h2 className="pickYourDestinationNumber">01</h2>
           <h2 className="pickYourDestination animate__animated animate__backInDown">PICK YOUR DESTINATION</h2>
         </div>
-          <img className="plannetImage" src={plannetImage} alt="" />
+          <img className="plannetImage" src={plannetImage} alt={planetHeading} />
       </div>
       <div className="plannetBox">
         <nav className="plannetSelectNav">
