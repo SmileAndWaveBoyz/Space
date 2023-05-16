@@ -27,7 +27,7 @@ body{
     min-height: 100%;
     position: absolute;
     top: 0px;
-    
+    transition: all 0.2s;
 }
 
 #home{
