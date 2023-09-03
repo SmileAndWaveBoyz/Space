@@ -48,7 +48,7 @@ function Technology() {
 
   return (
     <main>
-        <div className="imageBox">
+        <div className="imageBox" data-aos="fade-left">
             <div className="pickYourDestinationBox techPage">
                 <h2 className="pickYourDestinationNumber">03</h2>
                 <h2 className="pickYourDestination animate__animated animate__backInDown">SPACE LAUNCH 101</h2>
@@ -80,7 +80,7 @@ function Technology() {
                     <div className="dotNumber" key={slideIndex} onClick={() => changeSlide(slideIndex)}>{slideIndex + 1}</div>
                   ))}
                 </div> 
-              <div className="textGridTech">
+              <div className="textGridTech" data-aos="flip-down">
                 <h3 className="titleHeading techPage">THE TERMINOLOGY...</h3>
                 <h2 className="crewHeading">{crewHeading}</h2>
                 <p className="infoTextTech">{infoTextCrew}</p>

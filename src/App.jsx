@@ -20,6 +20,8 @@ function App() {
     navigate('/');
   }
 
+  const[hamburgerButtonOpen, setHamburgerButtonOpen] = useState(false);
+
   useEffect(() => {
     AOS.init(); // This initiates the animate on scroll library
   }, []);
@@ -49,11 +51,23 @@ function App() {
     <div id={pageName} className='rootDiv'>
       <nav className={menuCollapse ? "navBar expanded" : "navBar"}>
         <img className='logo' src="./assets/shared/logo.svg" alt="logo" onClick={handleLogoClick}/>
-        <button onClick={() => menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true)} 
-          className='hamburgerButton'><img className='hamburger' src="./assets/shared/icon-hamburger.svg" alt="menu button" />
+        <button onClick={
+          () => {
+            hamburgerButtonOpen ? setHamburgerButtonOpen(false) : setHamburgerButtonOpen(true);
+            menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
+          }
+        } 
+          // className='hamburgerButton'><img className='hamburger' src="./assets/shared/icon-hamburger.svg" alt="menu button" />
+          className='hamburgerButton'>
+            <div id="hamburgerButtonIcon" className={hamburgerButtonOpen ? `open` : null}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
         </button>
         <div className="navItemsContainer">
-          <button className='xButton' onClick={() => setMenuCollapse(false)}>x</button>
+          {/* <button className='xButton' onClick={() => setMenuCollapse(false)}>x</button> */}
           <ul className={'navItems ' + pageName}>
             <li className='firstNumberNav'><p>00</p><NavLink to="/">HOME</NavLink></li>
             <li><p>01</p><NavLink to="/destination">DESTINATION</NavLink></li>

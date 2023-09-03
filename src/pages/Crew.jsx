@@ -71,7 +71,7 @@ function Crew() {
   
   return (
     <main>
-      <div className="imageBox">
+      <div className="imageBox" data-aos="fade-left">
         <div className="pickYourDestinationBox">
           <h2 className="pickYourDestinationNumber">02</h2>
           <h2 className="pickYourDestination animate__animated animate__backInDown">MEET YOUR CREW</h2>
@@ -97,7 +97,7 @@ function Crew() {
             <div className="textGrid">
               <div className="buttonsAndText Crew">
 
-                <div className="textGridCrew">
+                <div className="textGridCrew" data-aos="fade-up">
                   <h3 className="titleHeading">{titleHeading}</h3>
                   <h2 className="crewHeading">{crewHeading}</h2>
                   <p className="infoTextCrew">{infoTextCrew}</p>
