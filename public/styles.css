@@ -468,6 +468,7 @@ li, a {
     transition: all 0.3s;
     cursor: pointer;
     outline: 1px solid rgb(255, 255, 255, 0.4);
+    outline: 0;
 }
 
 

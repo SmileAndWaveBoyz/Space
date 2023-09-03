@@ -5,6 +5,8 @@ import Main from "./pages/Main";
 import Crew from './pages/Crew';
 import Technology from './pages/Technology';
 import { useNavigate  } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css"
 
 function App() {
   //Hamburger button functionality
@@ -17,6 +19,10 @@ function App() {
   function handleLogoClick() {
     navigate('/');
   }
+
+  useEffect(() => {
+    AOS.init(); // This initiates the animate on scroll library
+  }, []);
   
   useEffect(() => { 
     let destination = location.pathname.slice(1);
