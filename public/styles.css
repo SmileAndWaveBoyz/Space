@@ -113,6 +113,7 @@ h5{
     outline: 0;
     display: inline;
     z-index: 4;
+    transform: translateY(-5px);
 }
 
 .hamburger{
